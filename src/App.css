@@ -60,6 +60,33 @@ body {
   text-decoration: none;
 }
 
+.bmi {
+  padding: 20px;
+}
+
+/* .form {
+  padding: 20px;
+} */
+
+.form--input {
+  height: 40px;
+  width: 150px;
+  margin: 0px 20px 0px 0px;
+  padding: 10px;
+}
+
+.form--button {
+  height: 40px;
+  width: 150px;
+  margin: 0px 20px 0px 0px;
+}
+
+
+/* .result {
+  padding: 20px;
+} */
+
+
 .challenges {
   display: flex;
   justify-content: center;
