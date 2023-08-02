@@ -9,12 +9,14 @@ export default function BMI() {
         weightLb: "",
     })
 
+    const [show, setShow] = React.useState(false)
+
     const bmi = +formData.weightLb / ((+formData.heightFt * 12 + +formData.heightIn)**2) * 703    
 
     console.log(!isNaN(bmi))
 
     function handleChange(event) {
-        const {name, value, type} = event.target
+        const {name, value} = event.target
         setFormData(prevFormData => {
             return {
                 ...prevFormData,
@@ -25,7 +27,9 @@ export default function BMI() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("data: ", formData)
+        setShow(prevShow => {
+            return !prevShow
+        })
     }
 
 
@@ -61,11 +65,11 @@ export default function BMI() {
                     <button 
                         className="form--button"
                     >
-                        Submit
+                        {show ? "Hide" : "Submit"}
                     </button>
                 </form>
                 <div className="result">
-                    {!isNaN(bmi) && <h2 className="result--statement">Your BMi is {bmi}</h2>}
+                    {show && <h2 className="result--statement">Your BMi is {bmi}</h2>}
                 </div>
             </div>
 
